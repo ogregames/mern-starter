@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import { commentSchema } from '../models/Comment';
+
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
@@ -7,6 +9,7 @@ const postSchema = new Schema({
   content: { type: 'String', required: true },
   slug: { type: 'String', required: true },
   cuid: { type: 'String', required: true },
+  comments: [commentSchema],
   dateAdded: { type: 'Date', default: Date.now, required: true },
 });
 
