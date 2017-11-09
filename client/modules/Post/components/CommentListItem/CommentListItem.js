@@ -25,7 +25,6 @@ function CommentListItem(props) {
           <a className={styles['comment-submit-button']} onClick={setDislike}><FormattedMessage id="setDislike" /></a>
         </div>
       </div>
-      <hr className={styles.divider} />
     </li>
   );
 }

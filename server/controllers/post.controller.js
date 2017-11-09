@@ -77,7 +77,7 @@ export function addComment(req, res) {
     content: sanitizeHtml(req.body.post.content),
   });
   Post.findOneAndUpdate({ cuid: req.body.post.cuid },
-    { $push: { 'comments': newComment } },
+    { $push: { comments: newComment } },
     { new: true }).exec((err) => {
       if (err) {
         res.status(500).send(err);
@@ -95,7 +95,7 @@ export function likeComment(req, res) {
     return;
   }
 
-  Post.update({ 'cuid': req.body.post.cuid, 'comments._id': req.body.post._id },
+  Post.update({ cuid: req.body.post.cuid, 'comments._id': req.body.post._id },
   { $inc: { 'comments.$.rating': req.body.post.direct } }, (err) => {
     if (err) {
       res.status(500).send(err);
