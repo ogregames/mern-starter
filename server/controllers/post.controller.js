@@ -88,7 +88,12 @@ export function addComment(req, res) {
   return;
 }
 
-
+/**
+ * Change a rating
+ * @param req
+ * @param res
+ * @returns void
+ */
 export function likeComment(req, res) {
   if (!req.body.post.cuid || !req.body.post._id || !req.body.post.direct) {
     res.status(403).end();

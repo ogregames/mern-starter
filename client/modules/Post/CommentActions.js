@@ -32,8 +32,6 @@ export function likeComment(comment) {
 }
 
 export function likeCommentRequest(comment) {
-  // console.log('Like comment call: '+JSON.stringify(comment));
-  // return;
   return (dispatch) => {
     return callApi('likecomment', 'post', {
       post: {

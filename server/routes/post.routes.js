@@ -16,6 +16,8 @@ router.route('/posts/:cuid').delete(PostController.deletePost);
 
 // Add a new comment
 router.route('/comment').post(PostController.addComment);
+
+// Cahnge a rating of comment
 router.route('/likecomment').post(PostController.likeComment);
 
 

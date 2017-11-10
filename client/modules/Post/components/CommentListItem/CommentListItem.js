@@ -12,7 +12,7 @@ function CommentListItem(props) {
     props.likeComment(props.cuid, props.item._id, -1);
   }
   let classes = 'content-normal-rating';
-  if (Math.abs(props.item.rating) > 2) {
+  if (Math.abs(props.item.rating) >= 2) {
     classes = (props.item.rating > 0) ? 'content-high-rating' : 'content-low-rating';
   }
   return (
