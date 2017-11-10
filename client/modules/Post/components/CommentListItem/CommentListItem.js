@@ -11,8 +11,12 @@ function CommentListItem(props) {
   function setDislike() {
     props.likeComment(props.cuid, props.item._id, -1);
   }
+  let classes = 'content-normal-rating';
+  if (Math.abs(props.item.rating) > 2) {
+    classes = (props.item.rating > 0) ? 'content-high-rating' : 'content-low-rating';
+  }
   return (
-    <li key={props.item._id} className={styles['single-comment']}>
+    <li key={props.item._id} className={`${styles['single-comment']} ${styles[classes]}`}>
       <div className={styles['comment-header']}>
         <div className={styles['comment-name']}>{props.item.name}</div>
         <div className={styles['comment-date']}>Добавлено: {props.item.dateAdded}</div>
